@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+
+
+        }
+
+        #container {
+            width: 50%;
+            height: 50vh;
+            margin-left: 400px;
+            background-color: #fff;
+            background-image: linear-gradient(-45deg, #f0f, #00f, #0f0);
+            background-size: 400% 400%;
+            border-radius: 20px;
+            animation: gradient-example-1 5s ease infinite;
+        }
+
+
+
+        @keyframes gradient-example-1 {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+
+        h2 {
+            padding: 20px;
+            margin: 80px;
+        }
+
+        input {
+
+            padding: 8px;
+            /* margin-bottom: 16px; */
+            box-sizing: border-box;
+        }
+
+
+
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+    <title>Triangle Area Calculator</title>
+</head>
+
+<body>
+
+
+
+    <div id="container">
+
+
+        <h2>Triangle Area Calculator</h2>
+
+        <div class="content">
+            <label for="base">Enter the base of the Triangle: </label>
+            <input type="number" id="base" placeholder="Enter base" required> <br><br>
+
+            <label for="height">Enter the height of the Triangle: </label>
+            <input type="number" id="height" placeholder="Enter height" required>
+        </div>
+
+        <button onclick="area()">Calculate Area</button>
+
+        <div id="result"></div>
+    </div>
+
+
+    </div>
+
+    <script>
+        function area() {
+            var base = parseFloat(document.getElementById('base').value);
+            var height = parseFloat(document.getElementById('height').value);
+
+            if (isNaN(base) || isNaN(height)) {
+                alert('Please enter valid numbers for base and height.');
+                return;
+            }
+
+            var area = 0.5 * base * height;
+            document.getElementById('result').innerHTML = 'The area of the Triangle is : ' + area.toFixed(2);
+            document.getElementById('result').style.fontSize = '30px';
+
+        }
+    </script>
+
+</body>
+
+</html>
